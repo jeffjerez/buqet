@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="container col-sm-8 col-md-8 col-lg-8 mt-5">
-    <div class="card">click on a date to use for starting balance</div>
+    <div >click on a date to use for starting balance</div>
     <div class="card">
         <h3 class="card-header" id="monthAndYear"></h3>
         <table class="table table-bordered table-responsive-sm" id="calendar">
@@ -54,8 +54,8 @@
             <input type="number" class="form-control col" name="payday_amount" id="payday_amount" value=0 onkeyup="get_paydays()">
             <label class="lead mr-2 ml-2" for="starting_amount">Balance: </label>
             <input type="number" class="form-control col" name="starting_amount" id="starting_amount"  value=0 onkeyup="get_paydays()">
-            <div class="btn-group-toggle col" data-toggle="buttons">
-					<label class="btn btn-primary active">
+            <div class="btn-group-toggle col" data-toggle="buttons" onclick="set_check()">
+					<label class="btn btn-outline-primary">
     					<input id="carry" type="checkbox"> Carry Over
   					</label>
 				<div>

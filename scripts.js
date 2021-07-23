@@ -6,7 +6,7 @@ class Bill {
 }
 
 function reset_month() {
-   carry.checked = false;
+   carry = false;
    carryAmount = 0;
    today = new Date();
    currentMonth = today.getMonth();
@@ -21,7 +21,7 @@ my_bills = $.csv.toObjects(csv);
 paydayAmount = document.getElementById("payday_amount");
 startAmount = document.getElementById("starting_amount");
 selectPayday = document.getElementById("payday");
-carry = document.getElementById("carry");
+carry = false;
 carryAmount = 0;
 amt = 0;
 
@@ -32,6 +32,10 @@ months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", 
 
 monthAndYear = document.getElementById("monthAndYear");
 reset_month();
+
+function set_check(){
+   carry = !carry;
+}
 
 function next_month() {
    myFocus = ""; 
@@ -45,7 +49,7 @@ function next_month() {
 function previous_month() {
    myFocus = ""; 
    selectDay = 0;
-   carry.checked = false;
+   carry = false;
    carryAmount = 0;
    currentYear = (currentMonth === 0) ? currentYear - 1 : currentYear;
    currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
@@ -86,12 +90,10 @@ function showCalendar(month, year) {
    // creating all cells
    let date = 1;
    setStart = false;
-   if (carry.checked) {
+   if (carry == true) {
       carryAmount = amt;
-      console.log("carry checked: " , carryAmount);
    }
    else {
-      console.log("carry not checked");
       amt = 0;
    }
 
