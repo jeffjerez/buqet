@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calendar</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+</head>
+<body>
+<div class="container col-sm-8 col-md-8 col-lg-8 mt-5">
+    <div class="card">click on a date to use for starting balance</div>
+    <div class="card">
+        <h3 class="card-header" id="monthAndYear"></h3>
+        <table class="table table-bordered table-responsive-sm" id="calendar">
+            <thead>
+            <tr>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+            </tr>
+            </thead>
+
+            <tbody id="calendar-body">
+
+            </tbody>
+        </table>
+
+        <div class="form-inline mb-4">
+            <button class="btn btn-outline-primary col-md-4 ml-auto" id="previous" onclick="previous_month()">Previous Month</button>
+             
+            <button class="btn btn-outline-primary col-md-4 ml-2" id="next" onclick="next_month()">Next Month</button>
+            <button class="btn btn-primary col-md-1 ml-2 mr-auto" id="reset" onclick="reset_month()">&#8635;</button>
+        </div>
+        <br/>
+        <form class="form-inline mx-auto" onsubmit="return false;">
+            <select class="form-control col" name="payday" id="payday" onchange="get_paydays()">
+                <option value="" disabled selected>Payday</option>
+                <option value=0>Sunday</option>
+                <option value=1>Monday</option>
+                <option value=2>Tuesday</option>
+                <option value=3>Wednesday</option>
+                <option value=4>Thursday</option>
+                <option value=5>Friday</option>
+                <option value=6>Saturday</option>
+            </select>
+            <label class="lead mr-2 ml-2" for="payday_amount">Pay: </label>
+            <input type="number" class="form-control col" name="payday_amount" id="payday_amount" value=0 onkeyup="get_paydays()">
+            <label class="lead mr-2 ml-2" for="starting_amount">Balance: </label>
+            <input type="number" class="form-control col" name="starting_amount" id="starting_amount"  value=0 onkeyup="get_paydays()">
+            <div class="btn-group-toggle col" data-toggle="buttons">
+					<label class="btn btn-primary active">
+    					<input id="carry" type="checkbox"> Carry Over
+  					</label>
+				<div>
+        </form>
+    </div>
+</div>
+<!-- Optional JavaScript for bootstrap -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<script src="jquery-csv.js"></script>
+<script defer src="scripts.js"></script>
+
+
+</body>
+</html>
