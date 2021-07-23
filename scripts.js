@@ -14,7 +14,22 @@ function reset_month() {
    showCalendar(currentMonth, currentYear);
 }
 
-let csv="day,name,amount\n1,rent,840\n8,internet,109\n12,dukenrg,100\n12,d+,15\n14,audible,25\n14,wdw,55\n17,apple,15.99\n18,amazon,6.50\n20,apple,15\n20,twitch,10\n23,spotify,10\n25,car insurance,220\27,car,541\n28,life insurance,900\n29,at&t,190";
+let csv="day,name,amount\n" +
+        "1,rent,840\n" +
+        "8,internet,109\n" +
+        "12,dukenrg,100\n" +
+        "12,d+,15\n" +
+        "14,audible,25\n" +
+        "14,wdw,55\n" +
+        "17,apple,15.99\n" +
+        "18,amazon,6.50\n" +
+        "20,apple,15\n" +
+        "20,twitch,10\n" +
+        "23,spotify,10\n" +
+        "25,car insurance,220\n" +
+        "27,car,541\n" +
+        "28,life insurance,900\n" +
+        "29,at&t,190";
 
 my_bills = $.csv.toObjects(csv);
 

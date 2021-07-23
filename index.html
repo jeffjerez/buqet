@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Calendar</title>
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
@@ -11,9 +10,9 @@
 </head>
 <body>
 <div class="container col-sm-8 col-md-8 col-lg-8 mt-5">
-    <div >click on a date to use for starting balance</div>
-    <div class="card">
-        <h3 class="card-header" id="monthAndYear"></h3>
+    <div class="d-flex justify-content-center"><img src="buqet.png"/></div>
+    <div class="card" style="border:none;">
+        <h3 class="card-header bg-success text-white" id="monthAndYear"></h3>
         <table class="table table-bordered table-responsive-sm" id="calendar">
             <thead>
             <tr>
@@ -33,10 +32,10 @@
         </table>
 
         <div class="form-inline mb-4">
-            <button class="btn btn-outline-primary col-md-4 ml-auto" id="previous" onclick="previous_month()">Previous Month</button>
+            <button class="btn btn-outline-success col-md-4 ml-auto" id="previous" onclick="previous_month()">Previous Month</button>
              
-            <button class="btn btn-outline-primary col-md-4 ml-2" id="next" onclick="next_month()">Next Month</button>
-            <button class="btn btn-primary col-md-1 ml-2 mr-auto" id="reset" onclick="reset_month()">&#8635;</button>
+            <button class="btn btn-outline-success col-md-4 ml-2" id="next" onclick="next_month()">Next Month</button>
+            <button class="btn btn-success col-md-1 ml-2 mr-auto" id="reset" onclick="reset_month()">&#8635;</button>
         </div>
         <br/>
         <form class="form-inline mx-auto" onsubmit="return false;">
@@ -55,7 +54,7 @@
             <label class="lead mr-2 ml-2" for="starting_amount">Balance: </label>
             <input type="number" class="form-control col" name="starting_amount" id="starting_amount"  value=0 onkeyup="get_paydays()">
             <div class="btn-group-toggle col" data-toggle="buttons" onclick="set_check()">
-					<label class="btn btn-outline-primary">
+					<label class="btn btn-outline-success">
     					<input id="carry" type="checkbox"> Carry Over
   					</label>
 				<div>
